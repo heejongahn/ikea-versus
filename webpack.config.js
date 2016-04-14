@@ -26,9 +26,9 @@ module.exports = {
     loaders: [
       { test: /\.png$/, loader: 'file?name=static/[hash].[ext]' },
       { test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file?name=static/[hash].[ext]' },
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.scss$/, loader: 'style!css!sass' },
-      { test: /\.styl$/, loader: 'style!css!stylus' },
+      { test: /\.css$/, loader: 'style!css!postcss' },
+      { test: /\.scss$/, loader: 'style!css!postcss!sass' },
+      { test: /\.styl$/, loader: 'style!css!postcss!stylus' },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
