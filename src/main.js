@@ -7,6 +7,6 @@ import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDom.render(
-  React.createElement(Greeting, null),
+  React.createElement(Greeting),
   document.getElementById('content')
 );
