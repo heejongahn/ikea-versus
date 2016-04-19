@@ -5,15 +5,40 @@ import 'script!jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-let AddCardButton = React.createClass({
+let AppContainer = React.createClass({
+  getInitialState: () => {
+    return {itemCount: 1};
+  },
+  handleAddCard: function(e) {
+    e.preventDefault();
+    alert(1);
+  },
+  render: function() {
+    return (
+      <div className="container">
+        <AddCardButton handleAddCard={this.handleAddCard}/>
+      </div>
+    );
+  },
+});
+
+let ProductCard = React.createClass({
   render: () => {
     return (
-      <span className="glyphicon glyphicon-plus"></span>
+      <h1>Product Card</h1>
+    )
+  }
+});
+
+let AddCardButton = React.createClass({
+  render: function() {
+    return (
+      <a className="glyphicon glyphicon-plus" onClick={this.props.handleAddCard}></a>
     );
   }
 });
 
 ReactDom.render(
-  React.createElement(AddCardButton),
+  React.createElement(AppContainer),
   document.getElementById('content')
 );
