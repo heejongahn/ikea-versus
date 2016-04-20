@@ -8,7 +8,7 @@ import './main.styl'
 
 let AppContainer = React.createClass({
   getInitialState: () => {
-    return {items: []};
+    return {items: [<ProductCard />]};
   },
   handleAddCard: function(e) {
     e.preventDefault();
@@ -38,7 +38,7 @@ let ProductCard = React.createClass({
 let AddCardButton = React.createClass({
   render: function() {
     return (
-      <a className="glyphicon glyphicon-plus" onClick={this.props.handleAddCard}></a>
+      <a className="add-card glyphicon glyphicon-plus" onClick={this.props.handleAddCard}></a>
     );
   }
 });
