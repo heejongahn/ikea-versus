@@ -7,15 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 let AppContainer = React.createClass({
   getInitialState: () => {
-    return {itemCount: 1};
+    return {items: []};
   },
   handleAddCard: function(e) {
     e.preventDefault();
-    alert(1);
+    this.setState({items: this.state.items.concat(<ProductCard />)});
   },
   render: function() {
+    let products = [];
     return (
       <div className="container">
+        {this.state.items.map(item => item)}
         <AddCardButton handleAddCard={this.handleAddCard}/>
       </div>
     );
